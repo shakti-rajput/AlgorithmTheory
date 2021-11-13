@@ -24,9 +24,9 @@ long count_Inversions (std::vector<int> & A, const size_t & begin, const size_t 
             aux[k++] = A[i++];
     }
     while(i < middle) aux[k++] = A[i++];
-    while(j < end) aux[k++] = A[j++];
+    //while(j < end) aux[k++] = A[j++]; --> overkill
 
-    for (size_t ind=0; ind<end - begin; ind++)
+    for (size_t ind=0; ind<j - begin; ind++)
         A[begin+ind] = aux[ind];
     return inversions;
 }
